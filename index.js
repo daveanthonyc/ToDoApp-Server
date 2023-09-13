@@ -1,5 +1,5 @@
 const express = require("express")
-const router = require('./api/todo')
+const router = require('./todo')
 
 const app = express()
 require("dotenv").config()
@@ -12,3 +12,5 @@ app.use(cors())
 app.listen(process.env.PORT, () => {
     console.log(`Server running on PORT ${process.env.PORT}`)
 })
+
+module.exports = app
