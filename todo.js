@@ -21,10 +21,6 @@ const toDoSchema = new mongoose.Schema({
 
 const Todo = mongoose.model('Todo', toDoSchema)
 
-router.get('/', (req, res) => {
-    res.json({message: "this works"})
-})
-
 // CREATE
 router.post('/v1/todos', async (req, res) => {
     try {
@@ -42,7 +38,7 @@ router.post('/v1/todos', async (req, res) => {
 })
 
 // READ
-router.get('/v1/todos', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const response = await Todo.find()
         res.status(200).json(response)
