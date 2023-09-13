@@ -38,7 +38,7 @@ router.post('/v1/todos', async (req, res) => {
 })
 
 // READ
-router.get('/', async (req, res) => {
+router.get('/v1/todos', async (req, res) => {
     try {
         const response = await Todo.find()
         res.status(200).json(response)
