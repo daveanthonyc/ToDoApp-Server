@@ -21,16 +21,6 @@ const toDoSchema = new mongoose.Schema({
 
 const Todo = mongoose.model('Todo', toDoSchema)
 
-router.get('/', async (req,res) => {
-    try {
-        const response = Todo.find();
-        const data = res.json(response);
-        res.send(data)
-    } catch (error) {
-        console.log(error)
-    }
-})
-
 // CREATE
 router.post('/v1/todos', async (req, res) => {
     try {
