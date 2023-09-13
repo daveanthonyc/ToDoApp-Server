@@ -102,3 +102,5 @@ app.delete('/v1/todos/:id', async (req, res) => {
 
 app.listen(process.env.PORT, () => {
 })
+
+export default app;
