@@ -5,15 +5,16 @@ const app = express()
 require("dotenv").config()
 const cors = require('cors')
 
-app.use("/api", router)
-app.use(express.json())
-
 const corsOptions = {
     origin: ['https://www.mern-todo-application.netlify.app', 'https://mern-todo-application.netlify.app'],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
 }
 
 app.use(cors(corsOptions))
+
+app.use("/api", router)
+app.use(express.json())
+
 
 app.get('/test', (req,res) => {
 
