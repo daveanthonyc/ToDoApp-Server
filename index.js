@@ -9,7 +9,7 @@ app.use("/api", router)
 app.use(express.json())
 
 const corsOptions = {
-    origin: 'https://mern-todo-application.netlify.app/',
+    origin: 'https://mern-todo-application.netlify.app',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
 }
 
