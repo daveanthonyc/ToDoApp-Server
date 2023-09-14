@@ -22,15 +22,15 @@ const toDoSchema = new mongoose.Schema({
 const Todo = mongoose.model('Todo', toDoSchema)
 
 // CREATE
+// json sent must be contain { body: "blah"}
 router.post('/v1/todos', async (req, res) => {
     try {
-        const body = req.body.body
+        const newBody = req.body.body
 
         const createdToDo = await Todo.create({
-            body: body,
+            body: newBody,
             completed: false
         })
-
         res.status(201).json({message: "todo created"})
     } catch (error) {
         res.status(500).json({message: error})
