@@ -65,7 +65,8 @@ router.get('/v1/todos/:id', async (req, res) => {
 router.put('/v1/todos/:id', async (req, res) => {
     try {
         const idToUpdate = req.params.id
-        const { body, completed } = req.body
+        const body = req.body.body
+        const completed = req.body.completed
 
         const updatedEntry = await Todo.findByIdAndUpdate(idToUpdate, {
             body: body,
